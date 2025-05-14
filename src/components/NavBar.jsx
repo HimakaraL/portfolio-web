@@ -42,11 +42,13 @@ export const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto mx-3">
             <Nav.Link
-              href="#home"
+              href="../docs/CV.pdf"
+              download="Himakara_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className={
                 activeLink === "home" ? "active-navbar-link" : "navbar-link"
               }
-              onClick={() => changeActiveLink("home")}
             >
               My CV
             </Nav.Link>

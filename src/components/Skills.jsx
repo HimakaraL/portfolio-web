@@ -18,54 +18,22 @@ export const Skills = () => {
           </Col>
         </Row>
         <Row className="mt-5">
-          <Col
-            xs={12}
-            md={6}
-            xl={2}
-            className="d-flex justify-content-center align-center"
-          >
-            <FaReact size={30} className="langIcon" />
-          </Col>
-          <Col
-            xs={12}
-            md={6}
-            xl={2}
-            className="d-flex justify-content-center align-center"
-          >
-            <FaLaravel size={60} className="langIcon" />
-          </Col>
-          <Col
-            xs={12}
-            md={6}
-            xl={2}
-            className="d-flex justify-content-center align-center"
-          >
-            <FaVuejs size={30} className="langIcon" />
-          </Col>
-          <Col
-            xs={12}
-            md={6}
-            xl={2}
-            className="d-flex justify-content-center align-center"
-          >
-            <FaNodeJs size={30} className="langIcon" />
-          </Col>
-          <Col
-            xs={12}
-            md={6}
-            xl={2}
-            className="d-flex justify-content-center align-center"
-          >
-            <FaPython size={30} className="langIcon" />
-          </Col>
-          <Col
-            xs={12}
-            md={6}
-            xl={2}
-            className="d-flex justify-content-center align-center"
-          >
-            <FaJava size={30} className="langIcon" />
-          </Col>
+          {[FaReact, FaLaravel, FaVuejs, FaNodeJs, FaPython, FaJava].map(
+            (IconComponent, index) => (
+              <Col
+                key={index}
+                xs={12}
+                md={6}
+                xl={2}
+                className="d-flex justify-content-center align-center"
+              >
+                <IconComponent
+                  size={30}
+                  className={`langIcon delay-${index}`}
+                />
+              </Col>
+            )
+          )}
         </Row>
       </Container>
     </section>

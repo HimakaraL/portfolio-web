@@ -42,10 +42,10 @@ export const Projects = () => {
 
               <Card.Body className="project-body">
                 <Card.Title className="project-title">
-                  PHP Laravel CRUD
+                  PHP Laravel App
                 </Card.Title>
               </Card.Body>
-
+    
               <Card.Body className="project-body link-body">
                 <Card.Link
                   href="https://github.com/HimakaraL/php-laravel-crud"

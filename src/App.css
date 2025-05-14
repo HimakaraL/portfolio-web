@@ -15,7 +15,7 @@ body {
   position: relative;
   color: #fff !important;
   font-family: "Poppins", sans-serif !important;
-  background-image: url("./assets/pexels-francesco-ungaro-998641.jpg");
+  background-image: url("./assets/bg.png");
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
@@ -276,6 +276,9 @@ p {
   padding: 6px 12px;
   border-radius: 6px;
   transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-link:hover {
@@ -302,10 +305,68 @@ p {
 
 @media (max-width: 576px) {
   .btn {
+    width: 100px !important;
     font-size: 10px !important;
   }
 
   .gitImage {
     display: none;
   }
+}
+
+.about-section {
+  font-family: "Poppins", sans-serif !important;
+  color: #ffffff;
+}
+
+.about-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #bbf8f2;
+}
+
+.delay-0 {
+  animation-delay: 0s;
+}
+.delay-1 {
+  animation-delay: 0.2s;
+}
+.delay-2 {
+  animation-delay: 0.4s;
+}
+.delay-3 {
+  animation-delay: 0.6s;
+}
+.delay-4 {
+  animation-delay: 0.8s;
+}
+.delay-5 {
+  animation-delay: 1s;
+}
+
+.btnBottom {
+  padding: 5px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btnBottom:hover {
+  border-color: #00ffff;
+  transform: scale(1.1);
+  color: #00ffff;
+  background-color: rgba(0, 255, 255, 0.1);
 }

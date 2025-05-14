@@ -70,7 +70,7 @@ export const Intro = () => {
               >
                 <p>Connect with Me 👇</p>
                 <a
-                  href="https://www.linkedin.com/in/heshan-himakara-b4a42223a/"
+                  href="https://www.linkedin.com/in/himakaral/"
                   className="btn mb-5 d-flex justify-content-center align-items-center"
                 >
                   Let's Connect{" "}
