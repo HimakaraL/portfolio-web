@@ -7,7 +7,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 export const Projects = () => {
   return (
-    <section className="Projects">
+    <section className="Projects section">
       <Container>
         <Row>
           <Col className="d-flex justify-content-center align-content-center mt-5">

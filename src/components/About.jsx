@@ -3,7 +3,7 @@ import { FaEnvelope, FaLinkedin } from "react-icons/fa";
 
 export const About = () => {
   return (
-    <section className="about-section py-5" id="about">
+    <section className="about-section py-5 section" id="about">
       <Container>
         <Row className="justify-content-center">
           <Col

@@ -10,7 +10,7 @@ import {
 
 export const Skills = () => {
   return (
-    <section className="Skills m-5" id="skills">
+    <section className="Skills m-5 section" id="skills">
       <Container className="mt-5">
         <Row>
           <Col className="d-flex justify-content-center align-content-center">
