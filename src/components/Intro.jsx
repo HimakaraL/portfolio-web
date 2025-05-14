@@ -3,6 +3,7 @@ import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import codeImage from "../assets/github-octocat-svgrepo-com.svg";
 import { useEffect, useState } from "react";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export const Intro = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -55,17 +56,28 @@ export const Intro = () => {
         <Row className="">
           <Col xs={12} md={6} xl={7} className="mt-5">
             <Row>
-              <span className="nameTag">Welcome to my Portfolio</span>
+              <span className="nameTag">Bonjour! I'm Himakara</span>
               <h1>
                 <span className="wrap">{text}</span>
               </h1>
-              <p>Hi I'm Himakara, Connect with Me 👇</p>
             </Row>
-            <Row className="mt-5">
-              <Col xs={12} md={12} xl={12} className="d-flex justify-content-center">
-                <button className="btn" onClick={() => console.log("connect")}>
-                  Let's Connect
-                </button>
+            <Row className="mt-5 d-flex justify-content-center align-items-center">
+              <Col
+                xs={12}
+                md={12}
+                xl={12}
+                className="d-flex justify-content-center flex-column mt-5"
+              >
+                <p>Connect with Me 👇</p>
+                <a
+                  href="https://www.linkedin.com/in/himakaral/"
+                  className="btn mb-5 d-flex justify-content-center align-items-center"
+                >
+                  Let's Connect{" "}
+                  <span className="mx-3 btn-icon">
+                    <FaExternalLinkAlt />
+                  </span>
+                </a>
               </Col>
             </Row>
           </Col>
