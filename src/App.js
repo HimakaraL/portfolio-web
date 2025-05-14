@@ -19,7 +19,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.5 } // Adjust threshold if needed
+      { threshold: 0.8 } // Adjust threshold if needed
     );
 
     sections.forEach((section) => {
