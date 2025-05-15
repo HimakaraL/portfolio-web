@@ -1,25 +1,28 @@
-import { useEffect } from 'react';
-import './App.css';
-import { NavBar } from './components/NavBar';
-import { Intro } from './components/Intro';
-import { Skills } from './components/Skills';
-import { Projects } from './components/Projects';
-import { About } from './components/About';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { useEffect } from "react";
+import "./App.css";
+import { NavBar } from "./components/NavBar";
+import { Intro } from "./components/Intro";
+import { Skills } from "./components/Skills";
+import { Projects } from "./components/Projects";
+import { About } from "./components/About";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   useEffect(() => {
-    const sections = document.querySelectorAll('.section');
-    
+    const sections = document.querySelectorAll(".section");
+
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
           }
         });
       },
-      { threshold: 0.8 } // Adjust threshold if needed
+      {
+        threshold: 0.4, 
+        rootMargin: "0px 0px -10% 0px",
+      } 
     );
 
     sections.forEach((section) => {
@@ -32,7 +35,7 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
+    <div className="App">
       <NavBar />
       <Intro />
       <Skills />
