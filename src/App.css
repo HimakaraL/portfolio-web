@@ -312,6 +312,11 @@ p {
   .gitImage {
     display: none;
   }
+
+  .langIcon {
+    width: 100px !important;
+    height: 100px !important;
+  }
 }
 
 .about-section {
