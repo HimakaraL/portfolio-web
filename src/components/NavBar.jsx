@@ -10,7 +10,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 // import '@fontsource/poppins/600.css';
 
 export const NavBar = () => {
-  const [activeLink, setActiveLink] = useState("home");
+  const [activeLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
