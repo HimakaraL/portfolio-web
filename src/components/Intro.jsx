@@ -38,7 +38,7 @@ export const Intro = () => {
       setLoopNum((prev) => prev + 1);
       setDelta(500);
     }
-  }, [text, isDeleting, loopNum, toCycle, period]);
+  }, [text, isDeleting, loopNum, period]);
 
   // ✅ Proper dependency array
   useEffect(() => {
