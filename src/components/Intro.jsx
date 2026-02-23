@@ -1,8 +1,6 @@
-import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import codeImage from "../assets/github-octocat-svgrepo-com.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 export const Intro = () => {
@@ -17,19 +15,11 @@ export const Intro = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 2000;
 
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => {
-      clearInterval(ticker);
-    };
-  }, [text]);
-
-  const tick = () => {
+  // ✅ Memoized tick function (fixes ESLint issue)
+  const tick = useCallback(() => {
     let i = loopNum % toCycle.length;
     let fullText = toCycle[i];
+
     let updatedText = isDeleting
       ? fullText.substring(0, text.length - 1)
       : fullText.substring(0, text.length + 1);
@@ -45,15 +35,24 @@ export const Intro = () => {
       setDelta(period);
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
-      setLoopNum(loopNum + 1);
+      setLoopNum((prev) => prev + 1);
       setDelta(500);
     }
-  };
+  }, [text, isDeleting, loopNum, toCycle, period]);
+
+  // ✅ Proper dependency array
+  useEffect(() => {
+    const ticker = setInterval(() => {
+      tick();
+    }, delta);
+
+    return () => clearInterval(ticker);
+  }, [delta, tick]);
 
   return (
     <section className="Banner m-5" id="home">
       <Container>
-        <Row className="">
+        <Row>
           <Col xs={12} md={6} xl={7} className="mt-5">
             <Row>
               <span className="nameTag">Bonjour! I'm Himakara</span>
@@ -61,6 +60,7 @@ export const Intro = () => {
                 <span className="wrap">{text}</span>
               </h1>
             </Row>
+
             <Row className="mt-5 d-flex justify-content-center align-items-center">
               <Col
                 xs={12}
@@ -72,8 +72,10 @@ export const Intro = () => {
                 <a
                   href="https://www.linkedin.com/in/himakaral/"
                   className="btn mb-5 d-flex justify-content-center align-items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Let's Connect{" "}
+                  Let's Connect
                   <span className="mx-3 btn-icon">
                     <FaExternalLinkAlt />
                   </span>
@@ -81,6 +83,7 @@ export const Intro = () => {
               </Col>
             </Row>
           </Col>
+
           <Col xs={12} md={6} xl={5}>
             <img src={codeImage} alt="headerImg" className="gitImage" />
           </Col>

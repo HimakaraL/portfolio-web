@@ -26,10 +26,6 @@ export const NavBar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const changeActiveLink = (value) => {
-    setActiveLink(value);
-  };
-
   return (
     <Navbar className={scrolled ? "scrolled" : ""}>
       <Container>
@@ -76,9 +72,9 @@ export const NavBar = () => {
               <a href="https://github.com/HimakaraL">
                 <FaGithub size={50} color="white" />
               </a>
-              {/* <a href="#">
+              <a href="https://www.linkedin.com/in/himakaral/">
                 <FaLinkedin size={30} color="white" />
-              </a> */}
+              </a>
             </div>
           </span>
         </Navbar.Collapse>
